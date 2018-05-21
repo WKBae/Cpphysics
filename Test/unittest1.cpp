@@ -5,13 +5,15 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Test
 {		
-	TEST_CLASS(UnitTest1)
+	TEST_CLASS(CircleTest)
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(testCreation)
 		{
-			// TODO: 테스트 코드를 여기에 입력합니다.
+			//Circle* circle = new Circle(10);
+			//Assert::AreEqual(circle.radius, 10);
+			Assert::AreEqual(1, 1);
 		}
 
 	};
