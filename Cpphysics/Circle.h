@@ -9,6 +9,8 @@ public:
 	void setPosition(int newX, int newY);
 	void setVelocity(int newVelX, int newVelY);
 
+	void applyVelocity();
+
 	int x, y;
 	int velocityX, velocityY;
 

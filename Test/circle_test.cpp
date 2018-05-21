@@ -40,4 +40,13 @@ public:
 		Assert::AreEqual(circle->velocityX, 5);
 		Assert::AreEqual(circle->velocityY, 8);
 	}
+
+	TEST_METHOD(testApplyVelocity) {
+		circle->setPosition(5, 10);
+		circle->setVelocity(1, 2);
+		circle->applyVelocity();
+		Assert::AreEqual(circle->x, 5 + 1);
+		Assert::AreEqual(circle->y, 10 + 2);
+	}
+
 };

@@ -19,3 +19,9 @@ void Circle::setVelocity(int newVelX, int newVelY) {
 	velocityX = newVelX;
 	velocityY = newVelY;
 }
+
+void Circle::applyVelocity() {
+	x += velocityX;
+	y += velocityY;
+}
+
