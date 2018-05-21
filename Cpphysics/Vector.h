@@ -20,6 +20,7 @@ public:
 	Vector<T>& operator+=(const Vector<T>& other);
 	Vector<T>& operator-=(const Vector<T>& other);
 	Vector<T>& operator*=(T scalar);
+	Vector<T>& operator/=(T scalar);
 };
 
 template<typename T>

@@ -77,3 +77,8 @@ template<typename T>
 Vector<T>& Vector<T>::operator*=(T scalar) {
 	return *this = *this * scalar;
 }
+
+template<typename T>
+Vector<T>& Vector<T>::operator/=(T scalar) {
+	return *this = *this / scalar;
+}

@@ -80,5 +80,10 @@ public:
 		vec *= 5.0;
 		Assert::AreEqual({ 7.0 * 5.0, 8.0 * 5.0 }, vec);
 	}
+	TEST_METHOD(testScalarDivAssign) {
+		Vector<double> vec(4.0, 6.0);
+		vec /= 2.0;
+		Assert::AreEqual({ 4.0 / 2.0, 6.0 / 2.0 }, vec);
+	}
 
 };
