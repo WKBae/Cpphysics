@@ -163,6 +163,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="circle_test.cpp" />
+    <ClCompile Include="vector_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cpphysics\Cpphysics.vcxproj">
