@@ -16,6 +16,12 @@ namespace Microsoft {
 				w << L"Vector(" << vec.x << L", " << vec.y << L")";
 				return w.str();
 			}
+			template<>
+			static std::wstring ToString<Vector<float>>(const Vector<float>& vec) {
+				std::wostringstream w;
+				w << L"Vector(" << vec.x << L", " << vec.y << L")";
+				return w.str();
+			}
 		}
 	}
 }

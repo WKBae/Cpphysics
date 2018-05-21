@@ -19,6 +19,13 @@ public:
 		Assert::AreEqual(vec1, vec2);
 	}
 
+	TEST_METHOD(testFloatEquality) {
+		Vector<float> vec1(0, 0), part(0.1, 0.2), vec2(1.0, 2.0);
+		for (int i = 0; i < 10; i++)
+			vec1 += part;
+		Assert::AreEqual(vec2, vec1);
+	}
+
 	TEST_METHOD(testAddition) {
 		Vector<int> vec1(1, 2), vec2(3, 4);
 		Assert::AreEqual({ 1 + 3, 2 + 4 }, vec1 + vec2);
