@@ -1,7 +1,7 @@
 #include "Circle.h"
 
 Circle::Circle(int radius)
-	: position(0, 0), velocity(0, 0), radius(radius), mass()
+	: position(), velocity(), radius(radius), mass()
 {
 
 }

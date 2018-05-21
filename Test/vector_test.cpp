@@ -10,6 +10,12 @@ TEST_CLASS(VectorTest)
 
 public:
 
+	TEST_METHOD(testDefaultConstructor) {
+		Vector<double> vector;
+		Assert::AreEqual(0.0, vector.x, EPSILON);
+		Assert::AreEqual(0.0, vector.y, EPSILON);
+	}
+
 	TEST_METHOD(testCreation) {
 		Vector<double> vector(5.0, 10.0);
 		Assert::AreEqual(5.0, vector.x, EPSILON);
