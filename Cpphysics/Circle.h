@@ -10,6 +10,7 @@ public:
 	void setMass(int newMass);
 	void setPosition(Vector newPos);
 	void setVelocity(Vector newVel);
+	void applyForce(Vector force);
 
 	void applyVelocity();
 

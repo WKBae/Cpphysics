@@ -22,3 +22,6 @@ void Circle::applyVelocity() {
 	position += velocity;
 }
 
+void Circle::applyForce(Vector force) {
+	velocity += force / mass;
+}

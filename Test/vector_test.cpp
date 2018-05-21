@@ -40,6 +40,11 @@ public:
 		Assert::AreEqual({ 3, 6 }, 3 * vec);
 	}
 
+	TEST_METHOD(testScalarDivision) {
+		Vector vec(2, 4);
+		Assert::AreEqual({ 1, 2 }, vec / 2);
+	}
+
 	TEST_METHOD(testAbs) {
 		Vector vec(3, 4);
 		Assert::AreEqual(5, vec.abs());

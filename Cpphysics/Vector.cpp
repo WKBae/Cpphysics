@@ -27,6 +27,9 @@ Vector Vector::operator*(int scalar) const {
 	return { x * scalar, y * scalar };
 }
 
+Vector Vector::operator/(int scalar) const {
+	return { x / scalar, y / scalar };
+}
 
 Vector operator*(int scalar, const Vector& vector) {
 	return vector * scalar;

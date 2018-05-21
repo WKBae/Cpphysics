@@ -51,4 +51,10 @@ public:
 		Assert::AreEqual({ 1, 2 }, circle->velocity);
 	}
 
+	TEST_METHOD(testApplyForce) {
+		circle->setVelocity({ 1, 2 });
+		circle->setMass(5);
+		circle->applyForce({ 5, 10 });
+		Assert::AreEqual({ 1 + 5 / 5, 2 + 10 / 5 }, circle->velocity);
+	}
 };
