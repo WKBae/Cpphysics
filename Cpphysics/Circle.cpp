@@ -20,6 +20,5 @@ void Circle::setVelocity(Vector newVel) {
 
 void Circle::applyVelocity() {
 	position += velocity;
-	velocity = { 0, 0 };
 }
 

@@ -48,7 +48,7 @@ public:
 		circle->setVelocity({ 1, 2 });
 		circle->applyVelocity();
 		Assert::AreEqual({ 5 + 1, 10 + 2 }, circle->position);
-		Assert::AreEqual({ 0, 0 }, circle->velocity);
+		Assert::AreEqual({ 1, 2 }, circle->velocity);
 	}
 
 };
