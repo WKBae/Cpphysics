@@ -6,77 +6,79 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 TEST_CLASS(VectorTest)
 {
+	static constexpr double EPSILON = 1e-5;
+
 public:
 
 	TEST_METHOD(testCreation) {
-		Vector<int> vector(5, 10);
-		Assert::AreEqual(vector.x, 5);
-		Assert::AreEqual(vector.y, 10);
+		Vector<double> vector(5.0, 10.0);
+		Assert::AreEqual(5.0, vector.x, EPSILON);
+		Assert::AreEqual(10.0, vector.y, EPSILON);
 	}
 
 	TEST_METHOD(testEquality) {
-		Vector<int> vec1(5, 10), vec2(5, 10);
-		Assert::AreEqual(vec1, vec2);
+		Vector<double> vec1(5.0, 10.0), vec2(5.0, 10.0);
+		Assert::AreEqual(vec2, vec1);
 	}
 
 	TEST_METHOD(testFloatEquality) {
-		Vector<float> vec1(0, 0), part(0.1, 0.2), vec2(1.0, 2.0);
+		Vector<double> vec1(0.0, 0.0), part(0.1, 0.2), vec2(1.0, 2.0);
 		for (int i = 0; i < 10; i++)
 			vec1 += part;
 		Assert::AreEqual(vec2, vec1);
 	}
 
 	TEST_METHOD(testAddition) {
-		Vector<int> vec1(1, 2), vec2(3, 4);
-		Assert::AreEqual({ 1 + 3, 2 + 4 }, vec1 + vec2);
+		Vector<double> vec1(1.0, 2.0), vec2(3.0, 4.0);
+		Assert::AreEqual({ 1.0 + 3.0, 2.0 + 4.0 }, vec1 + vec2);
 	}
 
 	TEST_METHOD(testNegate) {
-		Vector<int> vec(1, 2);
-		Assert::AreEqual({ -1, -2 }, -vec);
+		Vector<double> vec(1.0, 2.0);
+		Assert::AreEqual({ -1.0, -2.0 }, -vec);
 	}
 
 	TEST_METHOD(testSubtraction) {
-		Vector<int> vec1(10, 8), vec2(1, 2);
-		Assert::AreEqual({ 10 - 1, 8 - 2 }, vec1 - vec2);
+		Vector<double> vec1(10.0, 8.0), vec2(1.0, 2.0);
+		Assert::AreEqual({ 10.0 - 1.0, 8.0 - 2.0 }, vec1 - vec2);
 	}
 
 	TEST_METHOD(testScalarProduction) {
-		Vector<int> vec(1, 2);
-		Assert::AreEqual({ 2, 4 }, vec * 2);
-		Assert::AreEqual({ 3, 6 }, 3 * vec);
+		Vector<double> vec(1.0, 2.0);
+		Assert::AreEqual({ 2.0, 4.0 }, vec * 2.0);
+		Assert::AreEqual({ 3.0, 6.0 }, 3.0 * vec);
 	}
 
 	TEST_METHOD(testScalarDivision) {
-		Vector<int> vec(2, 4);
-		Assert::AreEqual({ 1, 2 }, vec / 2);
+		Vector<double> vec(2.0, 4.0);
+		Assert::AreEqual({ 1.0, 2.0 }, vec / 2.0);
 	}
 
 	TEST_METHOD(testAbs) {
-		Vector<int> vec(3, 4);
-		Assert::AreEqual(5, vec.abs());
+		Vector<double> vec(3.0, 4.0);
+		Assert::AreEqual(5.0, vec.abs(), EPSILON);
 	}
 
 	TEST_METHOD(testAssign) {
-		Vector<int> vec(1, 2);
-		vec = { 3, 4 };
-		Assert::AreEqual({ 3, 4 }, vec);
+		Vector<double> vec(1.0, 2.0);
+		vec = { 3.0, 4.0 };
+		Assert::AreEqual({ 3.0, 4.0 }, vec);
 	}
 
 	TEST_METHOD(testAddAssign) {
-		Vector<int> vec(1, 2);
-		vec += { 3, 4 };
-		Assert::AreEqual({ 4, 6 }, vec);
+		Vector<double> vec(1.0, 2.0);
+		vec += { 3.0, 4.0 };
+		Assert::AreEqual({ 4.0, 6.0 }, vec);
 	}
 	TEST_METHOD(testSubAssign) {
-		Vector<int> vec(5, 6);
-		vec -= { 2, 1 };
-		Assert::AreEqual({ 3, 5 }, vec);
+		Vector<double> vec(5.0, 6.0);
+		vec -= { 2.0, 1.0 };
+		Assert::AreEqual({ 3.0, 5.0 }, vec);
 	}
 	TEST_METHOD(testScalarMulAssign) {
-		Vector<int> vec(7, 8);
-		vec *= 5;
-		Assert::AreEqual({ 7 * 5, 8 * 5 }, vec);
+		Vector<double> vec(7.0, 8.0);
+		vec *= 5.0;
+		Assert::AreEqual({ 7.0 * 5.0, 8.0 * 5.0 }, vec);
 	}
 
 };
