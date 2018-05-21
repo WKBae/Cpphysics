@@ -14,6 +14,10 @@ public:
 	Vector operator-() const;
 	Vector operator-(const Vector& other) const;
 	Vector operator*(int scalar) const;
+
+	Vector& operator+=(const Vector& other);
+	Vector& operator-=(const Vector& other);
+	Vector& operator*=(int scalar);
 };
 
 Vector operator*(int scalar, const Vector& vector);

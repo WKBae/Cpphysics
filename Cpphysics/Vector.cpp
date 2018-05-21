@@ -35,3 +35,15 @@ Vector operator*(int scalar, const Vector& vector) {
 int Vector::abs() const {
 	return sqrt(x * x + y * y);
 }
+
+Vector& Vector::operator+=(const Vector& other) {
+	return *this = *this + other;
+}
+
+Vector& Vector::operator-=(const Vector& other) {
+	return *this = *this - other;
+}
+
+Vector& Vector::operator*=(int scalar) {
+	return *this = *this * scalar;
+}

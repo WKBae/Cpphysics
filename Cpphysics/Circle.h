@@ -1,18 +1,20 @@
 #pragma once
 
+#include "Vector.h"
+
 class Circle
 {
 public:
 	Circle(int radius);
 
 	void setMass(int newMass);
-	void setPosition(int newX, int newY);
-	void setVelocity(int newVelX, int newVelY);
+	void setPosition(Vector newPos);
+	void setVelocity(Vector newVel);
 
 	void applyVelocity();
 
-	int x, y;
-	int velocityX, velocityY;
+	Vector position;
+	Vector velocity;
 
 	int radius;
 	int mass;

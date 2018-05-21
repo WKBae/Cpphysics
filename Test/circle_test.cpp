@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "../Cpphysics/Circle.h"
+#include "../Cpphysics/Vector.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -25,28 +26,29 @@ public:
 	}
 
 	TEST_METHOD(testInitialPosition) {
-		Assert::AreEqual(circle->x, 0);
-		Assert::AreEqual(circle->y, 0);
+		Assert::AreEqual(Vector(0, 0), circle->position);
+	}
+
+	TEST_METHOD(testInitialVelocity) {
+		Assert::AreEqual(Vector(0, 0), circle->velocity);
 	}
 
 	TEST_METHOD(testSetPosition) {
-		circle->setPosition(2, 3);
-		Assert::AreEqual(circle->x, 2);
-		Assert::AreEqual(circle->y, 3);
+		circle->setPosition(Vector(2, 3));
+		Assert::AreEqual(Vector(2, 3), circle->position);
 	}
 
-	TEST_METHOD(testVelocity) {
-		circle->setVelocity(5, 8);
-		Assert::AreEqual(circle->velocityX, 5);
-		Assert::AreEqual(circle->velocityY, 8);
+	TEST_METHOD(testSetVelocity) {
+		circle->setVelocity(Vector(5, 8));
+		Assert::AreEqual(Vector(5, 8), circle->velocity);
 	}
 
 	TEST_METHOD(testApplyVelocity) {
-		circle->setPosition(5, 10);
-		circle->setVelocity(1, 2);
+		circle->setPosition(Vector(5, 10));
+		circle->setVelocity(Vector(1, 2));
 		circle->applyVelocity();
-		Assert::AreEqual(circle->x, 5 + 1);
-		Assert::AreEqual(circle->y, 10 + 2);
+		Assert::AreEqual(Vector(5 + 1, 10 + 2), circle->position);
+		Assert::AreEqual(Vector(0, 0), circle->velocity);
 	}
 
 };

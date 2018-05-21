@@ -1,7 +1,7 @@
 #include "Circle.h"
 
 Circle::Circle(int radius)
-	: x(), y(), radius(radius), mass()
+	: position(0, 0), velocity(0, 0), radius(radius), mass()
 {
 
 }
@@ -10,18 +10,16 @@ void Circle::setMass(int newMass) {
 	this->mass = newMass;
 }
 
-void Circle::setPosition(int newX, int newY) {
-	x = newX;
-	y = newY;
+void Circle::setPosition(Vector newPos) {
+	position = newPos;
 }
 
-void Circle::setVelocity(int newVelX, int newVelY) {
-	velocityX = newVelX;
-	velocityY = newVelY;
+void Circle::setVelocity(Vector newVel) {
+	velocity = newVel;
 }
 
 void Circle::applyVelocity() {
-	x += velocityX;
-	y += velocityY;
+	position += velocity;
+	velocity = Vector(0, 0);
 }
 

@@ -44,17 +44,27 @@ public:
 		Vector vec(3, 4);
 		Assert::AreEqual(5, vec.abs());
 	}
-};
 
-namespace Microsoft {
-	namespace VisualStudio {
-		namespace CppUnitTestFramework {
-			template<>
-			static std::wstring ToString<Vector>(const Vector& vec) {
-				std::wostringstream w;
-				w << L"Vector(" << vec.x << L", " << vec.y << L")";
-				return w.str();
-			}
-		}
+	TEST_METHOD(testAssign) {
+		Vector vec(1, 2);
+		vec = Vector(3, 4);
+		Assert::AreEqual(Vector(3, 4), vec);
 	}
-}
+
+	TEST_METHOD(testAddAssign) {
+		Vector vec(1, 2);
+		vec += Vector(3, 4);
+		Assert::AreEqual(Vector(4, 6), vec);
+	}
+	TEST_METHOD(testSubAssign) {
+		Vector vec(5, 6);
+		vec -= Vector(2, 1);
+		Assert::AreEqual(Vector(3, 5), vec);
+	}
+	TEST_METHOD(testScalarMulAssign) {
+		Vector vec(7, 8);
+		vec *= 5;
+		Assert::AreEqual(Vector(7 * 5, 8 * 5), vec);
+	}
+
+};
