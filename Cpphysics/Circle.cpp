@@ -1,7 +1,11 @@
 #include "Circle.h"
 
 Circle::Circle(int radius)
-	: radius(10)
+	: radius(radius), mass()
 {
 
+}
+
+void Circle::setMass(int newMass) {
+	this->mass = newMass;
 }

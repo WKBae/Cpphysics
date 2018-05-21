@@ -13,4 +13,10 @@ public:
 		Assert::AreEqual(circle->radius, 10);
 	}
 
+	TEST_METHOD(testMass) {
+		Circle* circle = new Circle(10);
+		circle->setMass(5);
+		Assert::AreEqual(circle->mass, 5);
+	}
+
 };
