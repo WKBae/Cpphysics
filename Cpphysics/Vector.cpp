@@ -12,11 +12,11 @@ bool Vector::operator==(const Vector& other) const {
 }
 
 Vector Vector::operator+(const Vector& other) const {
-	return Vector(x + other.x, y + other.y);
+	return { x + other.x, y + other.y };
 }
 
 Vector Vector::operator-() const {
-	return Vector(-x, -y);
+	return { -x, -y };
 }
 
 Vector Vector::operator-(const Vector& other) const {
@@ -24,7 +24,7 @@ Vector Vector::operator-(const Vector& other) const {
 }
 
 Vector Vector::operator*(int scalar) const {
-	return Vector(x * scalar, y * scalar);
+	return { x * scalar, y * scalar };
 }
 
 

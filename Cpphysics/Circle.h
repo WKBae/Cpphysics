@@ -5,7 +5,7 @@
 class Circle
 {
 public:
-	Circle(int radius);
+	explicit Circle(int radius);
 
 	void setMass(int newMass);
 	void setPosition(Vector newPos);

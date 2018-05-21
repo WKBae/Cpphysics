@@ -21,23 +21,23 @@ public:
 
 	TEST_METHOD(testAddition) {
 		Vector vec1(1, 2), vec2(3, 4);
-		Assert::AreEqual(Vector(1 + 3, 2 + 4), vec1 + vec2);
+		Assert::AreEqual({ 1 + 3, 2 + 4 }, vec1 + vec2);
 	}
 
 	TEST_METHOD(testNegate) {
 		Vector vec(1, 2);
-		Assert::AreEqual(Vector(-1, -2), -vec);
+		Assert::AreEqual({ -1, -2 }, -vec);
 	}
 
 	TEST_METHOD(testSubtraction) {
 		Vector vec1(10, 8), vec2(1, 2);
-		Assert::AreEqual(Vector(10 - 1, 8 - 2), vec1 - vec2);
+		Assert::AreEqual({ 10 - 1, 8 - 2 }, vec1 - vec2);
 	}
 
 	TEST_METHOD(testScalarProduction) {
 		Vector vec(1, 2);
-		Assert::AreEqual(Vector(2, 4), vec * 2);
-		Assert::AreEqual(Vector(3, 6), 3 * vec);
+		Assert::AreEqual({ 2, 4 }, vec * 2);
+		Assert::AreEqual({ 3, 6 }, 3 * vec);
 	}
 
 	TEST_METHOD(testAbs) {
@@ -47,24 +47,24 @@ public:
 
 	TEST_METHOD(testAssign) {
 		Vector vec(1, 2);
-		vec = Vector(3, 4);
-		Assert::AreEqual(Vector(3, 4), vec);
+		vec = { 3, 4 };
+		Assert::AreEqual({ 3, 4 }, vec);
 	}
 
 	TEST_METHOD(testAddAssign) {
 		Vector vec(1, 2);
-		vec += Vector(3, 4);
-		Assert::AreEqual(Vector(4, 6), vec);
+		vec += { 3, 4 };
+		Assert::AreEqual({ 4, 6 }, vec);
 	}
 	TEST_METHOD(testSubAssign) {
 		Vector vec(5, 6);
-		vec -= Vector(2, 1);
-		Assert::AreEqual(Vector(3, 5), vec);
+		vec -= { 2, 1 };
+		Assert::AreEqual({ 3, 5 }, vec);
 	}
 	TEST_METHOD(testScalarMulAssign) {
 		Vector vec(7, 8);
 		vec *= 5;
-		Assert::AreEqual(Vector(7 * 5, 8 * 5), vec);
+		Assert::AreEqual({ 7 * 5, 8 * 5 }, vec);
 	}
 
 };

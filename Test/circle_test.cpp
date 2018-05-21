@@ -26,29 +26,29 @@ public:
 	}
 
 	TEST_METHOD(testInitialPosition) {
-		Assert::AreEqual(Vector(0, 0), circle->position);
+		Assert::AreEqual({ 0, 0 }, circle->position);
 	}
 
 	TEST_METHOD(testInitialVelocity) {
-		Assert::AreEqual(Vector(0, 0), circle->velocity);
+		Assert::AreEqual({ 0, 0 }, circle->velocity);
 	}
 
 	TEST_METHOD(testSetPosition) {
-		circle->setPosition(Vector(2, 3));
-		Assert::AreEqual(Vector(2, 3), circle->position);
+		circle->setPosition({ 2, 3 });
+		Assert::AreEqual({ 2, 3 }, circle->position);
 	}
 
 	TEST_METHOD(testSetVelocity) {
-		circle->setVelocity(Vector(5, 8));
-		Assert::AreEqual(Vector(5, 8), circle->velocity);
+		circle->setVelocity({ 5, 8 });
+		Assert::AreEqual({ 5, 8 }, circle->velocity);
 	}
 
 	TEST_METHOD(testApplyVelocity) {
-		circle->setPosition(Vector(5, 10));
-		circle->setVelocity(Vector(1, 2));
+		circle->setPosition({ 5, 10 });
+		circle->setVelocity({ 1, 2 });
 		circle->applyVelocity();
-		Assert::AreEqual(Vector(5 + 1, 10 + 2), circle->position);
-		Assert::AreEqual(Vector(0, 0), circle->velocity);
+		Assert::AreEqual({ 5 + 1, 10 + 2 }, circle->position);
+		Assert::AreEqual({ 0, 0 }, circle->velocity);
 	}
 
 };
