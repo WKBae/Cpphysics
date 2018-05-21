@@ -1,24 +1,28 @@
 #pragma once
 
+template<typename T>
 class Vector
 {
 public:
-	Vector(int x, int y);
+	Vector(T x, T y);
 
-	int x, y;
+	T x, y;
 
-	int abs() const;
+	T abs() const;
 
-	bool operator==(const Vector& other) const;
-	Vector operator+(const Vector& other) const;
-	Vector operator-() const;
-	Vector operator-(const Vector& other) const;
-	Vector operator*(int scalar) const;
-	Vector operator/(int scalar) const;
+	bool operator==(const Vector<T>& other) const;
+	Vector<T> operator+(const Vector<T>& other) const;
+	Vector<T> operator-() const;
+	Vector<T> operator-(const Vector<T>& other) const;
+	Vector<T> operator*(T scalar) const;
+	Vector<T> operator/(T scalar) const;
 
-	Vector& operator+=(const Vector& other);
-	Vector& operator-=(const Vector& other);
-	Vector& operator*=(int scalar);
+	Vector<T>& operator+=(const Vector<T>& other);
+	Vector<T>& operator-=(const Vector<T>& other);
+	Vector<T>& operator*=(T scalar);
 };
 
-Vector operator*(int scalar, const Vector& vector);
+template<typename T>
+Vector<T> operator*(const T& scalar, const Vector<T>& vector);
+
+#include "Vector.tpp"

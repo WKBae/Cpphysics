@@ -8,14 +8,14 @@ public:
 	explicit Circle(int radius);
 
 	void setMass(int newMass);
-	void setPosition(Vector newPos);
-	void setVelocity(Vector newVel);
-	void applyForce(Vector force);
+	void setPosition(Vector<int> newPos);
+	void setVelocity(Vector<int> newVel);
+	void applyForce(Vector<int> force);
 
 	void applyVelocity();
 
-	Vector position;
-	Vector velocity;
+	Vector<int> position;
+	Vector<int> velocity;
 
 	int radius;
 	int mass;

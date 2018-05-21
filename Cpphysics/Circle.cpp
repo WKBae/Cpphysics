@@ -10,11 +10,11 @@ void Circle::setMass(int newMass) {
 	this->mass = newMass;
 }
 
-void Circle::setPosition(Vector newPos) {
+void Circle::setPosition(Vector<int> newPos) {
 	position = newPos;
 }
 
-void Circle::setVelocity(Vector newVel) {
+void Circle::setVelocity(Vector<int> newVel) {
 	velocity = newVel;
 }
 
@@ -22,6 +22,6 @@ void Circle::applyVelocity() {
 	position += velocity;
 }
 
-void Circle::applyForce(Vector force) {
+void Circle::applyForce(Vector<int> force) {
 	velocity += force / mass;
 }

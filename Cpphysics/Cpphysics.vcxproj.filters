@@ -26,8 +26,10 @@
     <ClCompile Include="Circle.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Vector.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Vector.tpp">
+      <Filter>헤더 파일</Filter>
+    </None>
   </ItemGroup>
 </Project>
