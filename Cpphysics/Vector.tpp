@@ -36,33 +36,8 @@ inline bool Vector<float>::operator==(const Vector<float>& other) const {
 }
 
 template<typename T>
-Vector<T> Vector<T>::operator+(const Vector<T>& other) const {
-	return { x + other.x, y + other.y };
-}
-
-template<typename T>
 Vector<T> Vector<T>::operator-() const {
 	return { -x, -y };
-}
-
-template<typename T>
-Vector<T> Vector<T>::operator-(const Vector<T>& other) const {
-	return *this + -other;
-}
-
-template<typename T>
-Vector<T> Vector<T>::operator*(T scalar) const {
-	return { x * scalar, y * scalar };
-}
-
-template<typename T>
-Vector<T> Vector<T>::operator/(T scalar) const {
-	return { x / scalar, y / scalar };
-}
-
-template<typename T>
-Vector<T> operator*(const T& scalar, const Vector<T>& vector) {
-	return vector * scalar;
 }
 
 template<typename T>
@@ -72,20 +47,27 @@ T Vector<T>::abs() const {
 
 template<typename T>
 Vector<T>& Vector<T>::operator+=(const Vector<T>& other) {
-	return *this = *this + other;
+	x += other.x;
+	y += other.y;
+	return *this;
 }
 
 template<typename T>
 Vector<T>& Vector<T>::operator-=(const Vector<T>& other) {
-	return *this = *this - other;
+	*this += -other;
+	return *this;
 }
 
 template<typename T>
 Vector<T>& Vector<T>::operator*=(T scalar) {
-	return *this = *this * scalar;
+	x *= scalar;
+	y *= scalar;
+	return *this;
 }
 
 template<typename T>
 Vector<T>& Vector<T>::operator/=(T scalar) {
-	return *this = *this / scalar;
+	x /= scalar;
+	y /= scalar;
+	return *this;
 }
