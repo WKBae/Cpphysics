@@ -1,27 +1,43 @@
 #include "Circle.h"
 
 Circle::Circle(int radius)
-	: position(), velocity(), radius(radius), mass()
+	: position_(), velocity_(), radius_(radius), mass_()
 {
 
 }
 
-void Circle::setMass(int newMass) {
-	this->mass = newMass;
+int Circle::radius() const {
+	return radius_;
 }
 
-void Circle::setPosition(Vector<int> newPos) {
-	position = newPos;
+void Circle::mass(int newMass) {
+	this->mass_ = newMass;
 }
 
-void Circle::setVelocity(Vector<int> newVel) {
-	velocity = newVel;
+int Circle::mass() const {
+	return mass_;
+}
+
+void Circle::position(const Vector<int>& newPos) {
+	position_ = newPos;
+}
+
+const Vector<int>& Circle::position() const {
+	return position_;
+}
+
+void Circle::velocity(const Vector<int>& newVel) {
+	velocity_ = newVel;
+}
+
+const Vector<int>& Circle::velocity() const {
+	return velocity_;
 }
 
 void Circle::applyVelocity() {
-	position += velocity;
+	position_ += velocity_;
 }
 
-void Circle::applyForce(Vector<int> force) {
-	velocity += force / mass;
+void Circle::applyForce(const Vector<int>& force) {
+	velocity_ += force / mass_;
 }

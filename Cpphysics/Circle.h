@@ -7,16 +7,25 @@ class Circle
 public:
 	explicit Circle(int radius);
 
-	void setMass(int newMass);
-	void setPosition(Vector<int> newPos);
-	void setVelocity(Vector<int> newVel);
-	void applyForce(Vector<int> force);
+	int radius() const;
+
+	int mass() const;
+	void mass(int newMass);
+
+	const Vector<int>& position() const;
+	void position(const Vector<int>& newPos);
+
+	const Vector<int>& velocity() const;
+	void velocity(const Vector<int>& newVel);
+
+	void applyForce(const Vector<int>& force);
 
 	void applyVelocity();
 
-	Vector<int> position;
-	Vector<int> velocity;
+private:
+	Vector<int> position_;
+	Vector<int> velocity_;
 
-	int radius;
-	int mass;
+	int radius_;
+	int mass_;
 };

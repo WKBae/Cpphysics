@@ -7,19 +7,19 @@ namespace Microsoft {
 			template<>
 			static std::wstring ToString<Vector<int>>(const Vector<int>& vec) {
 				std::wostringstream w;
-				w << L"Vector(" << vec.x << L", " << vec.y << L")";
+				w << L"Vector(" << vec.x() << L", " << vec.y() << L")";
 				return w.str();
 			}
 			template<>
 			static std::wstring ToString<Vector<double>>(const Vector<double>& vec) {
 				std::wostringstream w;
-				w << L"Vector(" << vec.x << L", " << vec.y << L")";
+				w << L"Vector(" << vec.x() << L", " << vec.y() << L")";
 				return w.str();
 			}
 			template<>
 			static std::wstring ToString<Vector<float>>(const Vector<float>& vec) {
 				std::wostringstream w;
-				w << L"Vector(" << vec.x << L", " << vec.y << L")";
+				w << L"Vector(" << vec.x() << L", " << vec.y() << L")";
 				return w.str();
 			}
 		}

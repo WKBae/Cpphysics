@@ -7,7 +7,8 @@ public:
 	Vector();
 	Vector(T x, T y);
 
-	T x, y;
+	T x() const;
+	T y() const;
 
 	T abs() const;
 
@@ -38,6 +39,9 @@ public:
 		lhs /= rhs;
 		return lhs;
 	}
+
+private:
+	T x_, y_;
 };
 
 #include "Vector.tpp"
